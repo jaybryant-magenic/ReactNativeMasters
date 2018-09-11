@@ -12,18 +12,8 @@ import {
 import {
   createStackNavigator
 } from 'react-navigation';
-import Home from './app/screens/Home';
-import Detail from './app/screens/Detail';
+import { RootStack } from './app/navigators/Main';
 
-const RootStack = createStackNavigator(
-  {
-    Home: Home,
-    Detail: Detail,
-  },
-  {
-    initialRouteName: 'Home',
-  }
-);
 
 export default class App extends Component {
   render() {
