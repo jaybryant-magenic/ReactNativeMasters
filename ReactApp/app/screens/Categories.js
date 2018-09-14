@@ -11,7 +11,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import Category from '../items/Category';
-import {FullData} from '../data/AnimeRepository';
+import FullData from '../data/AnimeRepository';
 
 export default class Categories extends Component {
     static navigationOptions  = {

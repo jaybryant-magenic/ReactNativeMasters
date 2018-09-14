@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Image,
-    Text,
 } from 'react-native';
-import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation';
 import Categories from '../screens/Categories';
-import Profile from '../screens/Profile';
+import News from '../screens/News';
 
-export const PortalTab = createBottomTabNavigator(
+const PortalTab = createBottomTabNavigator(
     {
         Categories: Categories,
-        Profile: Profile,
+        News: News,
     },
     {
         navigationOptions: ({navigation}) => ({
@@ -21,8 +20,8 @@ export const PortalTab = createBottomTabNavigator(
                 source = focused ? require("../assets/icons/home.png") : require("../assets/icons/home-outlined.png");
               }   
 
-              if (routeName === 'Profile') {
-                source = focused ? require("../assets/icons/profile.png") : require("../assets/icons/profile-outlined.png");
+              if (routeName === 'News') {
+                source = focused ? require("../assets/icons/news.png") : require("../assets/icons/news-outlined.png");
               }
 
               return (
@@ -35,3 +34,5 @@ export const PortalTab = createBottomTabNavigator(
         }),
     }  
   );
+
+  export default PortalTab;

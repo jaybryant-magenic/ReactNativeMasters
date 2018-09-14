@@ -13,6 +13,7 @@ import {
   TextInput,
   StyleSheet,
   Alert,
+  AsyncStorage,
 } from 'react-native';
 
 export default class Login extends Component {
@@ -64,11 +65,13 @@ export default class Login extends Component {
         ); 
     }
 
-    _onButtonPress = () =>  {
+    _onButtonPress = async () =>  {
         let validated = this.state.username.length > 0 && this.state.password.length > 0;
         if (validated) {
-            this.props.navigation.replace('Portal', {
-                username: this.state.username });
+            await this.saveUsername(this.state.username);
+            await this.props.navigation.replace('Portal', {
+                username: await this.getUsername()
+            });
         } else {
             Alert.alert('Error!',
             'Please enter username/password.',
@@ -82,6 +85,26 @@ export default class Login extends Component {
             });
         }
         
+    }
+
+    async saveUsername(username) {
+        try {
+            await AsyncStorage.setItem("username", username);
+        } catch(error) {
+            console.error(error);
+        }
+    }
+
+    async getUsername() {
+        try {
+            let username = await AsyncStorage.getItem("username");
+            if (username != null) {
+                console.log("async " + username);
+            }
+            return username;
+        } catch(error) {
+            console.error(error);
+        }
     }
 
 }

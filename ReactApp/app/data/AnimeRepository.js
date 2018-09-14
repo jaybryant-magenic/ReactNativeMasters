@@ -1,4 +1,4 @@
-export let FullData = [
+let FullData = [
     {
         name : "Action",
         contents: [
@@ -90,3 +90,5 @@ export let FullData = [
         ]
     }
 ]
+
+export default FullData;

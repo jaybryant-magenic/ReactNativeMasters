@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import {
     View,
     SectionList,
-    Image,
     Text,
-    TouchableOpacity,
     StyleSheet,
 } from 'react-native';
 import Anime from '../items/Anime';

@@ -8,8 +8,9 @@ import React, { Component } from 'react';
 import {
   Alert,
   BackHandler,
+  AsyncStorage,
 } from 'react-native';
-import {PortalTab} from '../navigators/PortalTab';
+import PortalTab from '../navigators/PortalTab';
 
 export default class Portal extends Component {
 
@@ -19,6 +20,8 @@ export default class Portal extends Component {
             title: `Anime Portal - Hi, ${username}!`
         }
     }
+
+    
 
     render() {
         console.log(this.props.navigation.state.params);
