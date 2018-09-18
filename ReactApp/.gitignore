@@ -1,6 +1,7 @@
 # OSX
 #
 .DS_Store
+../.DS_Store
 
 # Xcode
 #
@@ -29,6 +30,11 @@ build/
 .gradle
 local.properties
 *.iml
+android/.project
+android/.settings/
+android/app/.classpath
+android/app/.project
+android/app/.settings/
 
 # node.js
 #
@@ -54,3 +60,6 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+#vscode
+.vscode/
