@@ -5,11 +5,13 @@ import {
 import {createBottomTabNavigator} from 'react-navigation';
 import Categories from '../screens/Categories';
 import News from '../screens/News';
+import Photos from '../screens/Photos';
 
 const PortalTab = createBottomTabNavigator(
     {
         Categories: Categories,
         News: News,
+        Photos: Photos,
     },
     {
         navigationOptions: ({navigation}) => ({
@@ -22,6 +24,10 @@ const PortalTab = createBottomTabNavigator(
 
               if (routeName === 'News') {
                 source = focused ? require("../assets/icons/news.png") : require("../assets/icons/news-outlined.png");
+              }
+
+              if (routeName === 'Photos') {
+                source = focused ? require("../assets/icons/photos.png") : require("../assets/icons/photos-outlined.png");
               }
 
               return (
